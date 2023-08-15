@@ -1,0 +1,19 @@
+<%-include("./partials/header.ejs")%>
+  <%-include("./partials/nav.ejs")%>
+
+    <h1 class="m-5">User Profile</h1>
+    <ul class="ms-5 list-group list-group-item w-25 list-unstyled">
+      <% proData.forEach((user)=>{ %>
+        <div class="d-flex justify-content-between">
+          <li class=" w-50">
+            <%= user.username %>
+          </li>
+          <span class=""> <a class="text-decoration-none" href="/update/<%= user._id%>">🖊️</a>
+            <a class="text-decoration-none" href="/delete/<%= user._id%>">❌</a>
+            <a class="text-decoration-none" href="/reset/<%= user._id%>">🔐</a>
+          </span>
+        </div>
+        <% }) %>
+    </ul>
+
+    <%-include("./partials/footer.ejs")%>

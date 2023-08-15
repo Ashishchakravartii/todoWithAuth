@@ -1,0 +1,11 @@
+<%-include("partials/header")%>
+<%-include("partials/nav")%>
+
+<form class="mt-5 d-flex gap-3 flex-column align-items-center" action="/get-email" method="post">
+    <h1 class="mt-5">Forget Password</h1>
+    <input class="w-25 form-control m-2" type="email" placeholder="email" name="email">
+    <button class="w-25 btn btn-secondary ">Submit</button>
+    <h6 ><a class="text-decoration-none" href="/signin">Sign-In</a> | <a class="text-decoration-none " href="/signup"> Sign-Up</a></h6>
+
+</form>
+<%-include("partials/footer")%>

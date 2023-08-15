@@ -1,0 +1,13 @@
+<%-include("./partials/header.ejs")%>
+<%-include("./partials/nav.ejs")%>
+
+<form class="mt-5 d-flex gap-3 flex-column align-items-center" action="/signup" method="post">
+    <h1 class="mt-5">Sign-Up</h1>
+    <input class="w-25 form-control m-2" type="text" placeholder="username" name="username">
+    <input class="w-25 form-control m-2" type="email" placeholder="email" name="email">
+    <input class="w-25 form-control m-2" type="password" placeholder="********" name="password">
+    <button class="w-25 btn btn-secondary ">Submit</button>
+    <h6 > Already have an account? <a class="text-decoration-none" href="/signin"> Sign-In</a></h6>
+
+</form>
+<%-include("./partials/footer.ejs")%>

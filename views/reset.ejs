@@ -1,0 +1,11 @@
+<%-include("partials/header")%>
+<%-include("partials/nav")%>
+
+<form class="mt-5 d-flex gap-3 flex-column align-items-center" action="/reset/<%=id%>" method="post">
+    <h1 class="mt-5">Reset Password</h1>
+    <input class="w-25 form-control m-2" type="password" placeholder="Old password" name="oldpassword">
+    <input class="w-25 form-control m-2" type="password" placeholder="New password" name="newpassword">
+    <button class="w-25 btn btn-secondary ">Submit</button>
+
+</form>
+<%-include("partials/footer")%>
