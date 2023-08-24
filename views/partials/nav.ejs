@@ -1,10 +1,10 @@
 <nav class="w-100 bg-light pt-4 pb-3  ">
     <ul class=" d-flex  container gap-5 justify-content-end list-unstyled ">
-      <li> <a class="text-dark text-decoration-none fs-5" href=<%= user ? "/profile" : "/"  %>>home</a></li>
+      <li> <a class="text-dark text-decoration-none fs-5" href=<%= user ? "/home" : "/"  %>>home</a></li>
       <% if(user){ %>
         <li> <a class="text-dark text-decoration-none fs-5" href="/signout">sign-out</a></li>
-        <li> <a class="text-dark text-decoration-none fs-5" href="/reset/<%=user._id  %>">Reset</a></li>
-        <li><a class="text-decoration-none" href="/profile">Profile</a></li>
+       
+        <li><a class="text-dark text-decoration-none fs-5 " href="/profile">Profile</a></li>
 
         <% }else{ %>
       <li><a class="text-dark text-decoration-none fs-5" href="/signup">sign-up</a></li>

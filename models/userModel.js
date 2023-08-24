@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const plm= require("passport-local-mongoose");
 const userModel = new mongoose.Schema({
   passwordResetToken: {
     type: Number,
@@ -29,8 +29,13 @@ const userModel = new mongoose.Schema({
   avatar:{
     type:String,
     default:"default.jpg"
-  }
+  },
+  todos:[{
+    type: mongoose.Schema.Types.ObjectId, ref:"todo"
+  }],
 });
+
+userModel.plugin(plm);
 const user = mongoose.model("user", userModel);
 
 module.exports = user;

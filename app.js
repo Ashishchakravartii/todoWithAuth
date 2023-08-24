@@ -8,7 +8,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-
+const password= require("passport")
+const userModel= require("./models/userModel")
+const session= require("express-session");
+const passport = require('passport');
 
 require("./models/db")
 
@@ -24,7 +27,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  resave:false,
+  saveUninitialized:false,
+  secret:"dugcdc"
+}))
 
+app.use(passport.initialize())
+app.use(passport.session())
+passport.serializeUser(userModel.serializeUser())
+passport.deserializeUser(userModel.deserializeUser())
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
